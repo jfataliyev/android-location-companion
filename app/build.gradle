@@ -1,0 +1,26 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.phonebridge.mock'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.phonebridge.mock'
+        minSdk 26          // Android 8+; the phone runs Android 9
+        targetSdk 28       // keeps Android 9's behaviour for foreground services; this app is sideloaded only
+        versionCode 1
+        versionName '1.0'
+    }
+    buildTypes {
+        release { minifyEnabled false }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    lint {
+        abortOnError false
+    }
+}
